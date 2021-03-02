@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3e15e09-5b4c-46aa-ba06-deb30a907620" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/welzel_shared.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="78704162-4575-4ebe-953c-a24e1e913d90" />
+  <component name="ProjectId" id="1pCiqhFhCH3ixCUA3fPcBwGahFZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="welzel_ex4_q2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DTL-a" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/welzel_ex4_q2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.welzel_ex4_q2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3e15e09-5b4c-46aa-ba06-deb30a907620" name="Default Changelist" comment="" />
+      <created>1614693664966</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614693664966</updated>
+      <workItem from="1614693666198" duration="3119000" />
+      <workItem from="1614719862079" duration="303000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="259" key="GridCell.Tab.0.bottom" timestamp="1614695894916">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="259" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1614695894916" />
+    <state width="1878" height="259" key="GridCell.Tab.0.center" timestamp="1614695894916">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="259" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1614695894916" />
+    <state width="1878" height="259" key="GridCell.Tab.0.left" timestamp="1614695894915">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="259" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1614695894915" />
+    <state width="1878" height="259" key="GridCell.Tab.0.right" timestamp="1614695894916">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="259" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1614695894916" />
+    <state x="454" y="155" key="SettingsEditor" timestamp="1614694922839">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="454" y="155" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1614694922839" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DTL_a$welzel_ex4_q2.coverage" NAME="welzel_ex4_q2 Coverage Results" MODIFIED="1614695894906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

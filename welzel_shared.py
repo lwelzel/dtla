@@ -1,16 +1,7 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-import plotly.io as pio
-pio.renderers.default = 'browser'
-from astropy.visualization import astropy_mpl_style
-plt.style.use(astropy_mpl_style)
 from astropy.io import fits
 from astropy.utils.data import get_pkg_data_filename
-from matplotlib import pyplot as plt
-import matplotlib.image as mpimg
-import io
-from scipy import stats
+import os
 
 def read_img(loc):
     '''
@@ -46,3 +37,6 @@ def histogram_equalization(img, n_bins=256):
     img_hist_equ = np.interp(img.flatten(), bins[:-1], cdf)
 
     return img_hist_equ.reshape(img.shape)
+
+# set dir path for anything using welzel_shared
+os.chdir("/home/lwelzel/Documents/Git/dtla/")

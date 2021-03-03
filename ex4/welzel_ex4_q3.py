@@ -3,12 +3,10 @@ import pprint
 import numpy as np
 import matplotlib.pyplot as plt
 from astropy.visualization import astropy_mpl_style
-
 plt.style.use(astropy_mpl_style)
 from matplotlib import pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from scipy.ndimage import gaussian_filter
-import os
 
 img_raw = sh.read_img("./ex4/imgs_ex4/image2_2021.fits")
 
@@ -52,3 +50,8 @@ plt.savefig("./ex4/welzel_ex4_q3_plot.png")
 plt.show()
 
 # Answers:
+print("Q3")
+ans_b = dict(zip(['x', 'y'], [195, 375]))
+pprint.pp(ans_b, width=-1)
+print("See Hist. Equ. & Gauss. Filt. plot. \nThe Hist. Equ. enhances global contrast &"
+      " the guassian filter filters out what might be hot pixels/ less luminous objects.")

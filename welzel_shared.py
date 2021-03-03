@@ -13,7 +13,7 @@ def read_img(loc):
     image_files = get_pkg_data_filename(loc)
     print(f"---====== Reading {loc} image. ======---")
     fits.info(image_files)
-    print(f"---==========================================---")
+    print(f"---==========================================---\n")
     # TODO: this is pretty horrible but works well enough and I dont care about that part of the images
     # WARN: if the image_data is not all of exact equal dimensions then numpy operations dont work well of course
     # (list-of_tuples, etc)

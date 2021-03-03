@@ -61,8 +61,29 @@ print("a) as you can see gaussian filtering is very op.\n There is a hot spot on
 
 # part B
 
+# either constant as in constant all time
 sky_only=np.where((img_raw[0]==img_raw[1]), img_raw[0], np.zeros_like(img_raw[0])) #and (img_raw[0]=img_raw[2])
+# offset images by 30 px in y
 print(sky_only)
 print(sky_only.shape)
 plt.imshow(sky_only)
 plt.show()
+
+# or constant as in in constant flux
+sky_only=np.ones_like(img_raw[0,0])*np.mean(img_raw)
+
+# part C
+
+
+flat_field_raw= np.array(sh.read_img(f"./ex4/imgs_ex4/flat_2021.fits"))
+norm_mean_flat_field=flat_field_raw/np.mean(flat_field_raw)
+
+flat_field_re_norm=np.array([norm_mean_flat_field*mean_img for mean_img in np.sum(img_raw,axis=1)])
+# axes might be off, also apply to all images in cubes no sums ofc but its essentially the same since the mean scales
+
+# part D
+# substract noise
+
+imgs=imgs_raw-sky_only-flat_field_re_norm
+img=(imgs[1,:,30:-30]+imgs[0,:,:]+imgs[2,:,:])/3
+

@@ -27,3 +27,22 @@ def read_img(loc):
     # (list-of_tuples, etc)
     image_data = fits.getdata(image_files, ext=0)
     return image_data
+
+def histogram_equalization(img, n_bins=256):
+    '''
+    based on https://en.wikipedia.org/wiki/Histogram_equalization
+    :param img: (np.array) image to be used
+    :param n_bins: (int) number of bins, typically 256
+    :return: (np.array) histogram equalized image
+    '''
+    # TODO: found code using skimage.exposure.cumulative_distribution(), might be faster
+
+    # determine hist and bins using np, get cdf and normalize cdf
+    image_histogram, bins = np.histogram(img.flatten(), n_bins, density=True)
+    cdf = image_histogram.cumsum()
+    cdf = (n_bins-1) * cdf / cdf[-1]
+
+    # find new values from cdf
+    img_hist_equ = np.interp(img.flatten(), bins[:-1], cdf)
+
+    return img_hist_equ.reshape(img.shape)

@@ -1,7 +1,4 @@
 import numpy as np
-from astropy.io import fits
-from astropy.utils.data import get_pkg_data_filename
-import os
 
 
 def read_img(loc):
@@ -10,6 +7,8 @@ def read_img(loc):
     :param loc: (str) filepaths to images
     :return: (np.array) array for .fits data. Shape=(len(loc),420,1020)
     '''
+    from astropy.io import fits
+    from astropy.utils.data import get_pkg_data_filename
     image_files = get_pkg_data_filename(loc)
     print(f"---====== Reading {loc} image. ======---")
     fits.info(image_files)
@@ -40,6 +39,23 @@ def histogram_equalization(img, n_bins=256):
 
     return img_hist_equ.reshape(img.shape)
 
+def interp_nan(img, method='linear'):
+    '''
+    cleans up nan data in 2d arrays. Intended use is images.
+    :param img: (2d array)
+    :param method: ('nearest', linear’, ‘cubic’)
+    :return: cleaned 2d array
+    '''
+    from scipy.interpolate import griddata
+    grid_x, grid_y = np.mgrid[0:img.shape[0], 0:img.shape[1]]
 
-# set dir path for anything using welzel_shared
-os.chdir("/home/lwelzel/Documents/Git/dtla/")
+    img_masked=np.ma.array(img, mask=np.isnan(img)).compressed().flatten()
+
+    grid_masked = np.stack((np.ma.array(grid_x, mask=np.isnan(img)).compressed().flatten(),
+                             np.ma.array(grid_y, mask=np.isnan(img)).compressed().flatten())).T
+
+    img=griddata(points= grid_masked, values=img_masked, xi=(grid_x, grid_y), method=method)
+    return img
+
+# # set dir path for anything using welzel_shared
+# os.chdir("/home/lwelzel/Documents/Git/dtla/")

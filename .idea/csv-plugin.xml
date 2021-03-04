@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/ex4/welzel_ex4_q4.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

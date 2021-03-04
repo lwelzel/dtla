@@ -1,4 +1,7 @@
 import numpy as np
+from scipy.interpolate import griddata
+from astropy.io import fits
+from astropy.utils.data import get_pkg_data_filename
 
 
 def read_img(loc):
@@ -7,8 +10,6 @@ def read_img(loc):
     :param loc: (str) filepaths to images
     :return: (np.array) array for .fits data. Shape=(len(loc),420,1020)
     '''
-    from astropy.io import fits
-    from astropy.utils.data import get_pkg_data_filename
     image_files = get_pkg_data_filename(loc)
     print(f"---====== Reading {loc} image. ======---")
     fits.info(image_files)
@@ -46,16 +47,18 @@ def interp_nan(img, method='linear'):
     :param method: ('nearest', linear’, ‘cubic’)
     :return: cleaned 2d array
     '''
-    from scipy.interpolate import griddata
     grid_x, grid_y = np.mgrid[0:img.shape[0], 0:img.shape[1]]
 
-    img_masked=np.ma.array(img, mask=np.isnan(img)).compressed().flatten()
+    nan_loc=np.isnan(img)
+    img_masked=np.ma.array(img, mask=nan_loc).compressed().flatten()
 
-    grid_masked = np.stack((np.ma.array(grid_x, mask=np.isnan(img)).compressed().flatten(),
-                             np.ma.array(grid_y, mask=np.isnan(img)).compressed().flatten())).T
+    grid_masked = np.stack((np.ma.array(grid_x, mask=nan_loc).compressed().flatten(),
+                             np.ma.array(grid_y, mask=nan_loc).compressed().flatten())).T
 
-    img=griddata(points= grid_masked, values=img_masked, xi=(grid_x, grid_y), method=method)
+    indices_nan=np.argwhere(nan_loc)
+    img[indices_nan]=griddata(points= grid_masked, values=img_masked, xi=(grid_x[indices_nan], grid_y[indices_nan]), method=method)
     return img
 
-# # set dir path for anything using welzel_shared
-# os.chdir("/home/lwelzel/Documents/Git/dtla/")
+
+
+

@@ -108,7 +108,7 @@ plt.show()
 img_flat_field_raw = np.array(sh.read_img(f"./ex4/imgs_ex4/flat3_2021.fits"))
 img_norm_flat_field = img_flat_field_raw / np.mean(img_flat_field_raw)
 
-img_flat_field_re_scaled = np.array([img_norm_flat_field * np.mean(img) for img in img_raw_hp_cleaned
+img_flat_field_re_scaled = np.array([img_norm_flat_field for img in img_raw_hp_cleaned
                                     .reshape((-1, img_raw.shape[-2], img_raw.shape[-1]))]) \
     .reshape(img_raw.shape)
 
@@ -128,13 +128,13 @@ plt.show()
 # part D
 # ok, lets do it
 # we already have the imgs with the hotpixels removed, let remove the thermal straylight from them
-img = img_raw_hp_cleaned - img_th_straylight
+img = img_raw_hp_cleaned-img_th_straylight
 
 # this is here so we have an image before the subtraction of the flat field
 img_comp = np.sum(img, axis=1)[0, :, 0:-60] + np.sum(img, axis=1)[1, :, 30:-30] + np.sum(img, axis=1)[2, :, 60:]
 
 # now lets remove the flat field from them
-img=img-img_flat_field_re_scaled
+img=img/img_flat_field_re_scaled
 
 # summing up the images with the same telescope orientation
 img_summed = np.sum(img, axis=1)

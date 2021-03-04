@@ -4,7 +4,6 @@
     <list default="true" id="b3e15e09-5b4c-46aa-ba06-deb30a907620" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex4/welzel_ex4_q4.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex4/welzel_ex4_q4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex4/welzel_ex4_q4d_plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/ex4/welzel_ex4_q4d_plot.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +203,7 @@
       <workItem from="1614721478417" duration="5606000" />
       <workItem from="1614759674123" duration="6602000" />
       <workItem from="1614790485730" duration="2607000" />
-      <workItem from="1614848149230" duration="16445000" />
+      <workItem from="1614848149230" duration="17099000" />
     </task>
     <servers />
   </component>
@@ -226,7 +225,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/dtla$welzel_ex4_q2.coverage" NAME="welzel_ex4_q2 Coverage Results" MODIFIED="1614765502454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dtla$welzel_shared.coverage" NAME="welzel_shared Coverage Results" MODIFIED="1614790703753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dtla$welzel_ex4_q4.coverage" NAME="welzel_ex4_q4 Coverage Results" MODIFIED="1614869897998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/dtla$welzel_ex4_q4.coverage" NAME="welzel_ex4_q4 Coverage Results" MODIFIED="1614870563492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/dtla$welzel_ex4_q1.coverage" NAME="welzel_ex4_q1 Coverage Results" MODIFIED="1614721824104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DTL_a$welzel_ex4_q2.coverage" NAME="welzel_ex4_q2 Coverage Results" MODIFIED="1614695894906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dtla$welzel_ex4_q3.coverage" NAME="welzel_ex4_q3 Coverage Results" MODIFIED="1614791774234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />

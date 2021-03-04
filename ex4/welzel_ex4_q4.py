@@ -137,10 +137,10 @@ img_comp = np.sum(img, axis=1)[0, :, 0:-60] + np.sum(img, axis=1)[1, :, 30:-30] 
 img=img-img_flat_field_re_scaled
 
 # summing up the images with the same telescope orientation
-img = np.sum(img, axis=1)
+img_summed = np.sum(img, axis=1)
 
 # super positioning of the images
-img_region = img[0, :, 0:-60] + img[1, :, 30:-30] + img[2, :, 60:]
+img_region = img_summed[0, :, 0:-60] + img_summed[1, :, 30:-30] + img_summed[2, :, 60:]
 
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, constrained_layout=False)
 fig.suptitle('Ex4, Q4 d) plots.', fontsize=16)
@@ -178,7 +178,7 @@ print("d) the approximate position of the brown dwarf is x=35px , y=75px (my pro
 
 fig, (ax1, ax3) = plt.subplots(2, 1, constrained_layout=False)
 fig.suptitle('Plot so you see whats going on.', fontsize=16)
-im1 = ax1.imshow(img[0])
+im1 = ax1.imshow(img_summed[0])
 divider1 = make_axes_locatable(ax1)
 cax1 = divider1.append_axes("right", size="10%", pad=0.05)
 cbar1 = plt.colorbar(im1, cax1)
@@ -193,4 +193,17 @@ ax3.set_title('Flat field normalized by mean (compare with above).', fontsize=8)
 plt.tight_layout()
 plt.subplots_adjust(top=0.85)
 plt.savefig("./ex4/welzel_ex4_q4d_addendum_plot.png", dpi=500)
+plt.show()
+
+fig, (ax1) = plt.subplots(1, 1, constrained_layout=False)
+fig.suptitle('Ex4, Q4 d) straight superposition.', fontsize=16)
+im1 = ax1.imshow(np.sum(img,axis=(0,1)))
+divider1 = make_axes_locatable(ax1)
+cax1 = divider1.append_axes("right", size="10%", pad=0.05)
+cbar1 = plt.colorbar(im1, cax1)
+ax1.set_title('Final images superposition (30px offset for the star/ no offset of the raw images).', fontsize=8)
+
+plt.tight_layout()
+plt.subplots_adjust(top=0.85)
+plt.savefig("./ex4/welzel_ex4_q4d_addendum2_plot.png", dpi=500)
 plt.show()

@@ -57,12 +57,23 @@ plt.subplots_adjust(top=0.85)
 plt.savefig("./ex4/welzel_ex4_q4a_plot.png", dpi=500)
 plt.show()
 
-print("a) the two dominant structures we see are: Hot and rouge pixels")
-print(
-    "a) as you can see gaussian filtering is very op.\n There is a hot spot on the right moving is positive y direction consistantly over the images.")
+fig, (ax1) = plt.subplots(1, 1, constrained_layout=False)
+fig.suptitle('Ex4, Q4 a) plot.', fontsize=16)
+im1 = ax1.imshow(sh.histogram_equalization(np.sum(img_raw[0], axis=0)))
+divider1 = make_axes_locatable(ax1)
+cax1 = divider1.append_axes("right", size="10%", pad=0.05)
+cbar1 = plt.colorbar(im1, cax1)
+ax1.set_title('Raw image a, histogram equalized.', fontsize=8)
+
+plt.tight_layout()
+plt.subplots_adjust(top=0.85)
+plt.savefig("./ex4/welzel_ex4_q4a_2_plot.png", dpi=500)
+plt.show()
+
+print("a) the two dominant structures we see are: Hot and rouge pixels and (if we histogram equalize the images) we can also see the thermal straylight.")
+
 
 # part B
-# lets act like we didnt already see the brown dwarf in the plots above
 # Ok first im finding the hot pixels and interpolating over them
 # find hot pixel spots, just choose 1000 as cutoff, most other pixels are below 200
 img_raw_hp_cleaned = np.where(img_raw > 1000, np.nan, img_raw)
@@ -152,6 +163,7 @@ cbar3 = plt.colorbar(im3, cax3)
 ax3.set_title('Final image without flat field removed.', fontsize=8)
 
 im4 = ax4.imshow(gaussian_filter(img_comp, sigma=gau_sigma))
+ax4.scatter(x=35, y=75, c='black', marker="+", s=1)
 divider4 = make_axes_locatable(ax4)
 cax4 = divider4.append_axes("right", size="10%", pad=0.05)
 cbar4 = plt.colorbar(im4, cax4)
@@ -162,6 +174,7 @@ plt.subplots_adjust(top=0.85)
 plt.savefig("./ex4/welzel_ex4_q4d_plot.png", dpi=500)
 plt.show()
 
+print("d) the approximate position of the brown dwarf is x=35px , y=75px (my processed image) or x=65px , y=75px (raw image b).")
 
 fig, (ax1, ax3) = plt.subplots(2, 1, constrained_layout=False)
 fig.suptitle('Plot so you see whats going on.', fontsize=16)

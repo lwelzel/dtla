@@ -1,9 +1,7 @@
 import welzel_shared as sh
-import pprint
 import numpy as np
 import matplotlib.pyplot as plt
 from astropy.visualization import astropy_mpl_style
-
 plt.style.use(astropy_mpl_style)
 from matplotlib import pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -72,6 +70,7 @@ plt.show()
 
 print("a) the two dominant structures we see are: Hot and rouge pixels and (if we histogram equalize the images) we can also see the thermal straylight.")
 
+sh.save_img_to_fits(np.sum(img_raw[0], axis=0),"./ex4","welzel_ex4_q4a_plot.fits")
 
 # part B
 # Ok first im finding the hot pixels and interpolating over them
@@ -102,6 +101,8 @@ plt.subplots_adjust(top=0.85)
 plt.savefig("./ex4/welzel_ex4_q4b_plot.png", dpi=500)
 plt.show()
 
+sh.save_img_to_fits(img_th_straylight,"./ex4","welzel_ex4_q4b_plot.fits")
+
 # wow that looks real and smooth
 
 # part C
@@ -125,6 +126,8 @@ plt.subplots_adjust(top=0.85)
 plt.savefig("./ex4/welzel_ex4_q4c_plot.png", dpi=500)
 plt.show()
 
+sh.save_img_to_fits(img_norm_flat_field,"./ex4","welzel_ex4_q4c_plot.fits")
+
 # part D
 # ok, lets do it
 # we already have the imgs with the hotpixels removed, let remove the thermal straylight from them
@@ -134,7 +137,7 @@ img = img_raw_hp_cleaned-img_th_straylight
 img_comp = np.sum(img, axis=1)[0, :, 0:-60] + np.sum(img, axis=1)[1, :, 30:-30] + np.sum(img, axis=1)[2, :, 60:]
 
 # now lets remove the flat field from them
-img=img/img_flat_field_re_scaled
+img=img/img_flat_field_re_scaled*np.mean(img_flat_field_re_scaled)
 
 # summing up the images with the same telescope orientation
 img_summed = np.sum(img, axis=1)
@@ -151,6 +154,7 @@ cbar1 = plt.colorbar(im1, cax1)
 ax1.set_title('Final image.', fontsize=8)
 
 im2 = ax2.imshow(gaussian_filter(img_region, sigma=gau_sigma))
+ax2.scatter(x=34, y=75, c='black', marker="+", s=1)
 divider2 = make_axes_locatable(ax2)
 cax2 = divider2.append_axes("right", size="10%", pad=0.05)
 cbar2 = plt.colorbar(im2, cax2)
@@ -163,7 +167,7 @@ cbar3 = plt.colorbar(im3, cax3)
 ax3.set_title('Final image without flat field removed.', fontsize=8)
 
 im4 = ax4.imshow(gaussian_filter(img_comp, sigma=gau_sigma))
-ax4.scatter(x=35, y=75, c='black', marker="+", s=1)
+ax4.scatter(x=34, y=75, c='black', marker="+", s=1)
 divider4 = make_axes_locatable(ax4)
 cax4 = divider4.append_axes("right", size="10%", pad=0.05)
 cbar4 = plt.colorbar(im4, cax4)
@@ -174,36 +178,39 @@ plt.subplots_adjust(top=0.85)
 plt.savefig("./ex4/welzel_ex4_q4d_plot.png", dpi=500)
 plt.show()
 
-print("d) the approximate position of the brown dwarf is x=35px , y=75px (my processed image) or x=65px , y=75px (raw image b).")
+print("d) the approximate position of the brown dwarf is x=34px , y=75px (my processed image) or x=64px , y=75px (raw image b).")
 
-fig, (ax1, ax3) = plt.subplots(2, 1, constrained_layout=False)
-fig.suptitle('Plot so you see whats going on.', fontsize=16)
-im1 = ax1.imshow(img_summed[0])
-divider1 = make_axes_locatable(ax1)
-cax1 = divider1.append_axes("right", size="10%", pad=0.05)
-cbar1 = plt.colorbar(im1, cax1)
-ax1.set_title('Final image (with flat field subtracted), looks just like the inverse of the flat field!', fontsize=8)
+sh.save_img_to_fits(img_region,"./ex4","welzel_ex4_q4d_plot.fits")
+sh.save_img_to_fits(gaussian_filter(img_region, sigma=gau_sigma),"./ex4","welzel_ex4_q4d_gau_filt_plot.fits")
 
-im3 = ax3.imshow(img_norm_flat_field)
-divider3 = make_axes_locatable(ax3)
-cax3 = divider3.append_axes("right", size="10%", pad=0.05)
-cbar3 = plt.colorbar(im3, cax3)
-ax3.set_title('Flat field normalized by mean (compare with above).', fontsize=8)
-
-plt.tight_layout()
-plt.subplots_adjust(top=0.85)
-plt.savefig("./ex4/welzel_ex4_q4d_addendum_plot.png", dpi=500)
-plt.show()
-
-fig, (ax1) = plt.subplots(1, 1, constrained_layout=False)
-fig.suptitle('Ex4, Q4 d) straight superposition.', fontsize=16)
-im1 = ax1.imshow(np.sum(img,axis=(0,1)))
-divider1 = make_axes_locatable(ax1)
-cax1 = divider1.append_axes("right", size="10%", pad=0.05)
-cbar1 = plt.colorbar(im1, cax1)
-ax1.set_title('Final images superposition (30px offset for the star/ no offset of the raw images).', fontsize=8)
-
-plt.tight_layout()
-plt.subplots_adjust(top=0.85)
-plt.savefig("./ex4/welzel_ex4_q4d_addendum2_plot.png", dpi=500)
-plt.show()
+# fig, (ax1, ax3) = plt.subplots(2, 1, constrained_layout=False)
+# fig.suptitle('Plot so you see whats going on.', fontsize=16)
+# im1 = ax1.imshow(img_summed[0])
+# divider1 = make_axes_locatable(ax1)
+# cax1 = divider1.append_axes("right", size="10%", pad=0.05)
+# cbar1 = plt.colorbar(im1, cax1)
+# ax1.set_title('Final image (with flat field subtracted), looks just like the inverse of the flat field!', fontsize=8)
+#
+# im3 = ax3.imshow(img_norm_flat_field)
+# divider3 = make_axes_locatable(ax3)
+# cax3 = divider3.append_axes("right", size="10%", pad=0.05)
+# cbar3 = plt.colorbar(im3, cax3)
+# ax3.set_title('Flat field normalized by mean (compare with above).', fontsize=8)
+#
+# plt.tight_layout()
+# plt.subplots_adjust(top=0.85)
+# plt.savefig("./ex4/welzel_ex4_q4d_addendum_plot.png", dpi=500)
+# plt.show()
+#
+# fig, (ax1) = plt.subplots(1, 1, constrained_layout=False)
+# fig.suptitle('Ex4, Q4 d) straight superposition.', fontsize=16)
+# im1 = ax1.imshow(np.sum(img,axis=(0,1)))
+# divider1 = make_axes_locatable(ax1)
+# cax1 = divider1.append_axes("right", size="10%", pad=0.05)
+# cbar1 = plt.colorbar(im1, cax1)
+# ax1.set_title('Final images superposition (30px offset for the star/ no offset of the raw images).', fontsize=8)
+#
+# plt.tight_layout()
+# plt.subplots_adjust(top=0.85)
+# plt.savefig("./ex4/welzel_ex4_q4d_addendum2_plot.png", dpi=500)
+# plt.show()

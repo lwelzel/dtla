@@ -55,3 +55,5 @@ ans_b = dict(zip(['x', 'y'], [195, 375]))
 pprint.pp(ans_b, width=-1)
 print("See Hist. Equ. & Gauss. Filt. plot. \nThe Hist. Equ. enhances global contrast &"
       " the guassian filter filters out what might be hot pixels/ less luminous objects.")
+
+sh.save_img_to_fits(img,"./ex4","welzel_ex4_q3_plot.fits")

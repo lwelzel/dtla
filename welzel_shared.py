@@ -20,6 +20,9 @@ def read_img(loc):
     image_data = fits.getdata(image_files, ext=0)
     return image_data
 
+def save_img_to_fits(img, loc, name):
+    hdu = fits.PrimaryHDU(img)
+    hdu.writeto(loc+"/"+name, overwrite=True)
 
 def histogram_equalization(img, n_bins=256):
     '''

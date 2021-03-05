@@ -54,13 +54,16 @@ plt.savefig("./ex4/welzel_ex4_q2_plot.png")
 plt.show()
 
 # Answers:
-print("Q1 a)")
+print("Q2 a)")
 channel_names = [f"Offset Channel {i}: " for i in range(1, 5)]
 ans_a = dict(zip(channel_names, offset_levels))
 pprint.pp(ans_a, width=-1)
 
-print("\nQ1 b)")
+print("\nQ2 b)")
 ans_b = dict(zip(['x', 'y'], [35, 85]))
 pprint.pp(ans_b, width=-1)
 print("See Hist. Equ. & Gauss. Filt. plot. \nThe Hist. Equ. enhances global contrast &"
       " the guassian filter filters out what might be hot pixels/ less luminous objects.")
+
+sh.save_img_to_fits(img,"./ex4","welzel_ex4_q2_plot.fits")
+

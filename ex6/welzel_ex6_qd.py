@@ -97,7 +97,7 @@ if __name__ == "__main__":
                     c_v_lat=7e-6, c_v_e=1.3e-4, px_a=0.05, L=2.44e-8, T=2.7, sigma=3.1e5, NEP_th=4.5e-15,
                     q_eff=0.5,l_lead=1)
 
-    # check code with exercise example
+    # check code with exercise example from the book
     unit_test = False
     if unit_test:
         BoloCirc = Circ(R0=1e6, R_L=1e7, V_bias=1.5, T0=1.5,

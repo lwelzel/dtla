@@ -9,3 +9,7 @@ D
 ex4/welzel_ex4_q2.py,b/a/ba19ef3b98efc43b15eb519d31af18cb1ceb2d5b
 D
 ex4/welzel_ex4_q4.py,c/7/c75b7dbc7920158b77925cf55875e9c128dc7091
+H
+ex4/welzel_ex4_master.py,6/b/6b8e8e5cc6d348cb82f8bf04ae22b681eb658e7f
+D
+ex6/welzel_ex6_qd.py,7/c/7c032442baed11018370a902aed066c82288731b

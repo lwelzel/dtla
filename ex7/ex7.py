@@ -92,7 +92,7 @@ if __name__ == "__main__":
     print(f"delta f = {delta_f:.2e} Hz\n")
 
     # c iii
-    spec_res = c / (wavelength * delta_f)
+    spec_res = (wavelength * delta_f) / c
 
     print(f"spectral resolution = {spec_res:.2e}")
 

@@ -42,16 +42,16 @@ if __name__ == "__main__":
     tau = resistance * C
     f_cutoff = 1/(2*np.pi*tau)
 
-    print(f"C = {C:.2e}\n"
-          f"tau = {tau:.2e}\n"
-          f"Cutoff frequency = {f_cutoff:.2e}\n")
+    print(f"C = {C:.2e} F\n"
+          f"tau = {tau:.2e} s\n"
+          f"Cutoff frequency = {f_cutoff:.2e} Hz\n")
 
     # b i
     Y = V1 / V2
     T_N = (T1- Y*T2)/(Y-1)
 
     print(f"Y = {Y:.2e}\n"
-          f"T_N = {T_N:.2e}\n")
+          f"T_N = {T_N:.2e} K\n")
 
     # b ii
     T_B = T_N
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     thermal_limit = hv < k_T_B
 
-    print(f"T_B = {T_B:.2e}\n"
+    print(f"T_B = {T_B:.2e} K\n"
           f"hv = {hv:.2e}\n"
           f"kT_B = {k_T_B:.2e}\n"
           f"thermal limit: {thermal_limit}\n"
@@ -73,8 +73,8 @@ if __name__ == "__main__":
     IA2 = (4*k*T_N*f_cutoff)/resistance
     rms_mp_noise = np.sqrt(IA2)
 
-    print(f"IA^2 = {IA2:.2e}\n"
-          f"RMS Amp Noise = {rms_mp_noise:.2e}\n")
+    print(f"IA^2 = {IA2:.2e} A^2\n"
+          f"RMS Amp Noise = {rms_mp_noise:.2e} A\n")
 
     # c i
     delta_f_IF = delta_f_frac * f_cutoff
@@ -82,14 +82,14 @@ if __name__ == "__main__":
 
     heterodyne_rec_better = delta_f_IF > eta_delta_f
 
-    print(f"delta_f_IF = {delta_f_IF:.2e}\n"
-          f"eta delta_f = {eta_delta_f:.2e}\n"
+    print(f"delta_f_IF = {delta_f_IF:.2e} Hz\n"
+          f"eta delta_f = {eta_delta_f:.2e} Hz\n"
           f"heterodyne receiver better: {heterodyne_rec_better}\n")
 
     # c ii
     delta_f = delta_f_IF / eff
 
-    print(f"delta f = {delta_f:.2e}\n")
+    print(f"delta f = {delta_f:.2e} Hz\n")
 
     # c iii
     spec_res = c / (wavelength * delta_f)

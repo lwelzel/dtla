@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/ex7/ex7.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/welzel_shared.py">
           <value>
             <Attribute>

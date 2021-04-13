@@ -13,3 +13,6 @@ H
 ex4/welzel_ex4_master.py,6/b/6b8e8e5cc6d348cb82f8bf04ae22b681eb658e7f
 D
 ex6/welzel_ex6_qd.py,7/c/7c032442baed11018370a902aed066c82288731b
+:
+
+ex7/ex7.py,1/f/1f5082a65966720046230cc562ad1a7884ee5d9a

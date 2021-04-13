@@ -1,0 +1,18 @@
+
+jpython:S116"NRename this field "NEP_th" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÔÕô¥øÿÿÿÿ
+jpython:S116"NRename this field "V_bias" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñÕ¿‚øÿÿÿÿ
+ipython:S107"MMethod "__init__" has 14 parameters, which is greater than the 13 authorized.(ÚîÅ‡ùÿÿÿÿ
+ipython:S116$"RRename this field "R_detector" to match the regular expression ^[_a-z][_a-z0-9]*$.(æİà°
+xpython:S18450"`Rename field "C_v_e" to prevent any misunderstanding/clash with field "c_v_e" defined on line 45(‘µå
+epython:S1007"IRename method "set_G" to match the regular expression ^[a-z_][a-z0-9_]*$.(º¼’ûÿÿÿÿ
+epython:S116%"NRename this field "diss_P" to match the regular expression ^[_a-z][_a-z0-9]*$.(•Ë›
+python:S1845/"dRename field "C_v_lat" to prevent any misunderstanding/clash with field "c_v_lat" defined on line 44(êôğşÿÿÿÿ
+hpython:S1161"QRename this field "C_v_total" to match the regular expression ^[_a-z][_a-z0-9]*$.(®š•¹
+Bpython:S1481A"%Remove the unused local variable "i".(»–â£ûÿÿÿÿ
+^python:S1854F"FRemove this assignment to local variable 'I'; the value is never used.(È³—è
+dpython:S1160"MRename this field "C_v_e" to match the regular expression ^[_a-z][_a-z0-9]*$.(‘µå
+ipython:S100T"MRename method "set_NEP_J" to match the regular expression ^[a-z_][a-z0-9_]*$.(åÃ‚Îøÿÿÿÿ
+Bpython:S1255"Remove this commented out code.(×‡¡íüÿÿÿÿ8²ûÒì†/
+=python:S125U"Remove this commented out code.(Àóì8ŒÄÏî†/
+kpython:S116/"ORename this field "C_v_lat" to match the regular expression ^[_a-z][_a-z0-9]*$.(êôğşÿÿÿÿ
+ipython:S116"MRename this field "V_out" to match the regular expression ^[_a-z][_a-z0-9]*$.(šœõ²üÿÿÿÿ

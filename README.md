@@ -1,3 +1,3 @@
 # Detection of Light
 
-Detection of Light course exercises
+Detection of Light course exercises.
